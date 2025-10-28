@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/repoListFragment">
+
+    <fragment
+        android:id="@+id/repoListFragment"
+        android:name="ec.edu.uisek.githubclient.ui.list.RepoListFragment"
+        android:label="Repositorios"
+        tools:layout="@layout/fragment_repo_list">
+        <action
+            android:id="@+id/action_repoList_to_detail"
+            app:destination="@id/repoDetailFragment" />
+        <action
+            android:id="@+id/action_repoList_to_newProject"
+            app:destination="@id/newProjectFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/repoDetailFragment"
+        android:name="ec.edu.uisek.githubclient.ui.detail.RepoDetailFragment"
+        android:label="Detalle"
+        tools:layout="@layout/fragment_repo_detail" />
+
+    <fragment
+        android:id="@+id/newProjectFragment"
+        android:name="ec.edu.uisek.githubclient.ui.form.NewProjectFragment"
+        android:label="Nuevo proyecto"
+        tools:layout="@layout/fragment_repo_project" />
+</navigation>

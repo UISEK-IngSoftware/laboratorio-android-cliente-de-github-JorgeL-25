@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.GithubClient" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Personaliza los colores aquí si deseas -->
+        <!-- <item name="colorPrimary">@color/purple_500</item> -->
     </style>
 
-    <style name="Theme.GithubClient" parent="Base.Theme.GithubClient" />
+    <!-- Tema principal -->
+    <style name="Theme.GithubClient" parent="Base.Theme.GithubClient"/>
 </resources>
