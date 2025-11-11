@@ -7,33 +7,36 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ec.edu.uisek.githubclient.R
-import ec.edu.uisek.githubclient.model.Repo
+import ec.edu.uisek.githubclient.model.Repositorio
 
 class RepoAdapter(
-    private val data: List<Repo>,
-    private val onClick: (Repo) -> Unit
-) : RecyclerView.Adapter<RepoAdapter.VH>() {
+    private val data: List<Repositorio>,
+    private val onClick: (Repositorio) -> Unit
+) : RecyclerView.Adapter<RepoAdapter.ViewHolder>() {
 
-    inner class VH(v: View) : RecyclerView.ViewHolder(v) {
-        val img: ImageView = v.findViewById(R.id.imgAvatar)
-        val name: TextView = v.findViewById(R.id.txtName)
-        val owner: TextView = v.findViewById(R.id.txtOwner)
-        val stars: TextView = v.findViewById(R.id.txtStars)
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val avatar: ImageView = view.findViewById(R.id.ivAvatar)
+        val nombre: TextView = view.findViewById(R.id.tvNombre)
+        val descripcion: TextView = view.findViewById(R.id.tvDescripcion)
+        val lenguaje: TextView = view.findViewById(R.id.tvLenguaje)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_repo, parent, false)
-        return VH(v)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_repo, parent, false)
+        return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(h: VH, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val repo = data[position]
-        h.img.setImageResource(repo.avatarResId)
-        h.name.text = repo.name
-        h.owner.text = repo.owner
-        h.stars.text = "★ ${repo.stars}"
-        h.itemView.setOnClickListener { onClick(repo) }
+        holder.avatar.setImageResource(repo.avatarRes)
+        holder.nombre.text = repo.nombre
+        holder.descripcion.text = repo.descripcion
+        holder.lenguaje.text = repo.lenguaje
+
+        holder.itemView.setOnClickListener { onClick(repo) }
     }
 
-    override fun getItemCount()=data.size
+    override fun getItemCount() = data.size
 }
+
