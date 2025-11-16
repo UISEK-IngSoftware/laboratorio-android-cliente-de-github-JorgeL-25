@@ -23,6 +23,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.fabNewProject)
             .setOnClickListener {
                 navController.navigate(R.id.newProjectFragment)
-                }
-        }
+            }
+    }
 }

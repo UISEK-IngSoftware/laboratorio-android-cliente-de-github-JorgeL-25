@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_repoList_to_newProject"
             app:destination="@id/newProjectFragment" />
+        <action
+            android:id="@+id/action_repoListFragment_to_newProjectFragment"
+            app:destination="@id/newProjectFragment" />
     </fragment>
 
     <fragment
