@@ -21,7 +21,8 @@ class FormularioFragment : Fragment(R.layout.fragment_formulario) {
         }
 
         btnGuardar.setOnClickListener {
-            Toast.makeText(requireContext(), "El Repositorio se ha guardado con éxito", Toast.LENGTH_SHORT).show()
+            // Esto muestra el mensaje Toast
+            Toast.makeText(requireContext(), "El repositorio se ha guardado con éxito", Toast.LENGTH_SHORT).show()
             findNavController().popBackStack()
         }
     }
