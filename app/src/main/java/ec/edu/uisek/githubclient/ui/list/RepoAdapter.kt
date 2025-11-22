@@ -5,13 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import ec.edu.uisek.githubclient.R
 import ec.edu.uisek.githubclient.model.Repositorio
+import ec.edu.uisek.githubclient.R
 
 class RepoAdapter(
-    private val repositorios: List<Repositorio>
+    private val repositorios: MutableList<Repositorio>,
+    private val onEdit: (Int) -> Unit,
+    private val onDelete: (Int) -> Unit
 ) : RecyclerView.Adapter<RepoAdapter.RepoViewHolder>() {
 
     inner class RepoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,10 +37,10 @@ class RepoAdapter(
         holder.tvLenguaje.text = repo.lenguaje
 
         holder.btnEditar.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Editar Repositorio", Toast.LENGTH_SHORT).show()
+            onEdit(position) // Acción editar: lo manejas en el fragment
         }
         holder.btnEliminar.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Eliminar Repositorio", Toast.LENGTH_SHORT).show()
+            onDelete(position) // Acción eliminar: lo manejas en el fragment
         }
     }
 
