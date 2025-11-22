@@ -3,6 +3,7 @@ package ec.edu.uisek.githubclient.ui.form
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ec.edu.uisek.githubclient.R
@@ -16,11 +17,11 @@ class FormularioFragment : Fragment(R.layout.fragment_formulario) {
         val btnGuardar = view.findViewById<Button>(R.id.btnGuardar)
 
         btnCancelar.setOnClickListener {
-            findNavController().popBackStack() // Vuelve atrás
+            findNavController().popBackStack()
         }
 
         btnGuardar.setOnClickListener {
-            // Ejemplo: puedes mostrar un Toast, o solo volver atrás
+            Toast.makeText(requireContext(), "El Repositorio se ha guardado con éxito", Toast.LENGTH_SHORT).show()
             findNavController().popBackStack()
         }
     }

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="32dp">
+    android:padding="32dp"
+    android:gravity="center">
 
     <EditText
         android:id="@+id/etNombre"
@@ -22,8 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="32dp"
-        android:gravity="end">
+        android:gravity="end"
+        android:layout_marginTop="32dp">
 
         <Button
             android:id="@+id/btnCancelar"

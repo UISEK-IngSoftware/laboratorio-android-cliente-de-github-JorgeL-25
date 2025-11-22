@@ -17,6 +17,5 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="24dp"
         android:src="@drawable/ic_add"
-        android:contentDescription="Crear nuevo repositorio"
-        app:tint="@android:color/white"/>
+        android:contentDescription="Crear nuevo repositorio" />
 </FrameLayout>
