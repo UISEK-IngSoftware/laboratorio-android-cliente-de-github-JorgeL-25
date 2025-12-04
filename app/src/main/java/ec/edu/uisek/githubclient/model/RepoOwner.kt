@@ -1,4 +1,6 @@
 package ec.edu.uisek.githubclient.model
 
-class RepoOwner {
-}
+data class RepoOwner(
+    val login: String? = null,
+    val avatar_url: String? = null
+)

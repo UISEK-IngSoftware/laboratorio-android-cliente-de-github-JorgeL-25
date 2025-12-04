@@ -1,4 +1,4 @@
-package ec.edu.uisek.githubclient.network
+package ec.edu.uisek.githubclient.services
 
 import ec.edu.uisek.githubclient.model.Repo
 import retrofit2.Response

@@ -1,66 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:padding="12dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="12dp">
+    android:background="#FFF7F0FF">
 
-    <ImageView
-        android:id="@+id/ivAvatar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/avatar1"
-        android:contentDescription="Avatar" />
-
+    <!-- Columna izquierda: avatar + botones -->
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:paddingStart="12dp">
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/tvNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre del repositorio"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:id="@+id/tvDescripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Descripción"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/tvLenguaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lenguaje"
-            android:textSize="14sp"
-            android:paddingBottom="6dp"/>
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_avatar_placeholder"
+            android:contentDescription="@string/app_name" />
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_edit"
+                android:contentDescription="Editar" />
+
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_delete"
+                android:contentDescription="Eliminar"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Columna derecha: textos -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="8dp">
+
+        <!-- Fila nombre -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/btnEditar"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_edit"
-                android:contentDescription="Editar"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del\nrepositorio"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:textColor="@android:color/black" />
 
-            <ImageView
-                android:id="@+id/btnEliminar"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+            <TextView
+                android:id="@+id/tvNombreRepo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:src="@drawable/ic_delete"
-                android:contentDescription="Eliminar"/>
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Nombre" />
+        </LinearLayout>
+
+        <!-- Fila descripción -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción del\nrepositorio"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tvDescripcionRepo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:textSize="13sp"
+                android:textColor="#444444"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="Descripción" />
+        </LinearLayout>
+
+        <!-- Fila lenguaje -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lenguaje"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tvLenguaje"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Lenguaje" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
